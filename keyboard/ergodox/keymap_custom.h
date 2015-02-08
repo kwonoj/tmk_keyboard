@@ -89,7 +89,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |   F11  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F12  |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |        |      |      |      |      |      | ~L3  |           |      |      |      |      |      |      |  PrtSc |
+     * | TRNS   |      |      |      |      |      | ~L3  |           |      |      |      |      |      |      |  PrtSc |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -109,7 +109,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP( // Layer 2: Function and Media Keys
         // Left Hand
          F11, F1,  F2,  F3,  F4,  F5,  NO,
-         NO, NO,  NO,  NO,  NO,  NO,   FN6,
+         TRNS, NO,  NO,  NO,  NO,  NO,   FN6,
          NO, NO,  NO,  NO,  NO,  NO,
          TRNS, NO,  NO,  NO,  NO,  NO,  TRNS,
          NO, NO,  NO,  TRNS, TRNS,
@@ -259,7 +259,7 @@ void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
 
 	//Explicitly move qwerty layer for KR layout
 	layer_origin_colemak = true;
-	layer_on(2);
+	layer_on(1);
 	register_code(KC_RALT);
 	unregister_code(KC_RALT);
 	break;
