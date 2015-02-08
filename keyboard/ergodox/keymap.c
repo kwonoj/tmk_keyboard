@@ -221,11 +221,7 @@ uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
 }
 
 #if defined(KEYMAP_CUB)
-
 // function keymap_fn_to_action will be defined in keymap_cub.h
-
-#elif defined(KEYMAP_CUSTOM)
-// function keymap_fn_to_action will be defined in keymap_custom.h
 
 #else
 /* translates Fn keycode to action */
