@@ -7,10 +7,10 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |   TAB  |   Q  |   W  |   F  |   P  |   G  |   [  |           |   ]  |   J  |   L  |   U  |   Y  |   ;  |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * |        |   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |   '    |
-     * |--------+------+------+------+------+------|  L1  |           | ~L1  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------|  L2  |           | ~L2  |------+------+------+------+------+--------|
      * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   K  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LGui |   `  |      | LCtl | Lalt |                                       | Left | Down |  Up  | Right|  L2  |
+     *   | LGui |   `  |      | LCtl | Lalt |                                       | Left | Down |  Up  | Right|  L1  |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
      *                                        |      |      |       |      |  KR  |
@@ -41,7 +41,50 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    PGDN, ENT, SPC
     ),
 
-    /* Layer 1: Function and Media Keys
+    /* Layer 1: QWERTY (Gaming)
+     *
+     * ,--------------------------------------------------.           ,--------------------------------------------------.
+     * |   =    |   1  |   2  |   3  |   4  |   5  |  ESC |           |   \  |   6  |   7  |   8  |   9  |   0  |   -    |
+     * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+     * |   TAB  |   Q  |   W  |   E  |   R  |   T  |   [  |           |   ]  |   Y  |   U  |   I  |   O  |   P  |        |
+     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+     * |        |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
+     * |--------+------+------+------+------+------|  L2  |           | ~L2  |------+------+------+------+------+--------|
+     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
+     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+     *   | LGui |   `  |      | LCtl | Lalt |                                       | Left | Down |  Up  | Right|  L0  |
+     *   `----------------------------------'                                       `----------------------------------'
+     *                                        ,-------------.       ,-------------.
+     *                                        |      |      |       |      |  KR  |
+     *                                 ,------|------|------|       |------+------+------.
+     *                                 |      |      | Home |       | PgUp |      |      |
+     *                                 | BkSp | Del  |------|       |------| Enter| Space|
+     *                                 |      |      |  End |       | PgDn |      |      |
+     *                                 `--------------------'       `--------------------'
+     */
+
+    KEYMAP( // Layer 1: Qwerty
+        // Left Hand
+        EQL, 1,   2,   3,   4,   5,   ESC,
+        TAB, Q,   W,   E,   R,   T,   LBRC,
+        NO,  A,   S,   D,   F,   G,
+        LSFT,Z,   X,   C,   V,   B,   FN0,
+        LGUI,GRV, NO,  LCTL,LALT,
+                                      NO,  NO,
+                                           HOME,
+                                  BSPC,DEL, END,
+        // Right Hand
+            BSLS,  6,   7,   8,   9,   0,   MINS,
+            RBRC, Y,   U,   I,   O,   P,   NO,
+                  H,   J,   K,   L,   SCLN,   QUOT,
+            FN2,  N,   M,   COMM,DOT, SLSH,   RSFT,
+                       LEFT,DOWN, UP, RGHT,   FN1,
+        NO, FN3,
+        PGUP,
+        PGDN, ENT, SPC
+    ),
+
+    /* Layer 2: Function and Media Keys
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
      * |   F11  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F12  |
@@ -63,7 +106,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 `--------------------'       `--------------------'
      */
 
-    KEYMAP( // Layer 1: Function and Media Keys
+    KEYMAP( // Layer 2: Function and Media Keys
         // Left Hand
          F11, F1,  F2,  F3,  F4,  F5,  NO,
          NO, NO,  NO,  NO,  NO,  NO,   FN6,
@@ -83,49 +126,6 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,
         TRNS, TRNS, TRNS
     ),
-
-    /* Layer 1: QWERTY (Gaming)
-     *
-     * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |   =    |   1  |   2  |   3  |   4  |   5  |  ESC |           |   \  |   6  |   7  |   8  |   9  |   0  |   -    |
-     * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |   TAB  |   Q  |   W  |   E  |   R  |   T  |   [  |           |   ]  |   Y  |   U  |   I  |   O  |   P  |        |
-     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |        |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|  L1  |           | ~L1  |------+------+------+------+------+--------|
-     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
-     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LGui |   `  |      | LCtl | Lalt |                                       | Left | Down |  Up  | Right| RGui |
-     *   `----------------------------------'                                       `----------------------------------'
-     *                                        ,-------------.       ,-------------.
-     *                                        |      |      |       |      |  KR  |
-     *                                 ,------|------|------|       |------+------+------.
-     *                                 |      |      | Home |       | PgUp |      |      |
-     *                                 | BkSp | Del  |------|       |------| Enter| Space|
-     *                                 |      |      |  End |       | PgDn |      |      |
-     *                                 `--------------------'       `--------------------'
-     */
-
-	KEYMAP( // Layer 2: Qwerty
-		// Left Hand
-	    EQL, 1,   2,   3,   4,   5,   ESC,
-	    TAB, Q,   W,   E,   R,   T,   LBRC,
-	    NO,  A,   S,   D,   F,   G,
-	    LSFT,Z,   X,   C,   V,   B,   FN0,
-	    LGUI,GRV, NO,  LCTL,LALT,
-	                                  NO,  NO,
-	                                       HOME,
-	                              BSPC,DEL, END,
-	    // Right Hand
-		    BSLS,  6,   7,   8,   9,   0,   MINS,
-		    RBRC, Y,   U,   I,   O,   P,   NO,
-		          H,   J,   K,   L,   SCLN,	  QUOT,
-		    FN2,  N,   M,   COMM,DOT, SLSH,   RSFT,
-		               LEFT,DOWN, UP, RGHT,	  FN1,
-	    NO, FN3,
-	    PGUP,
-	    PGDN, ENT, SPC
-	),
 
     /* Layer 3: Bridge to special
      *
@@ -222,9 +222,9 @@ enum function_id {
 };
 
 static const uint16_t PROGMEM fn_actions[] = {
-    [0] = ACTION_LAYER_INVERT(1, ON_PRESS),                // FN0  - Switch layer state between 1 to current
-    [1] = ACTION_LAYER_INVERT(2, ON_PRESS),                // FN1  - Switch layer state between 2 to current
-    [2] = ACTION_LAYER_MOMENTARY(1),                       // FN2  - Switching to layer 1 while holding key
+    [0] = ACTION_LAYER_INVERT(2, ON_PRESS),                // FN0  - Switch layer state between 2 to current
+    [1] = ACTION_LAYER_INVERT(1, ON_PRESS),                // FN1  - Switch layer state between 1 to current
+    [2] = ACTION_LAYER_MOMENTARY(2),                       // FN2  - Switching to layer 2 while holding key
     [3] = ACTION_FUNCTION(RALT_QWERTY),			   // FN3 - Switching language macro for qwerty based layout
     [4] = ACTION_FUNCTION(RALT_COLEMAK),                   // FN4 - Switching language macro for colemak based layout
 
