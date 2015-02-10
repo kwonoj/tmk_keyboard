@@ -7,8 +7,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |   TAB  |   Q  |   W  |   F  |   P  |   G  |   [  |           |   ]  |   J  |   L  |   U  |   Y  |   ;  |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * |        |   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  |   '    |
-     * |--------+------+------+------+------+------|  L2  |           | ~L2  |------+------+------+------+------+--------|
-     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   K  |   M  |   ,  |   .  |   /  | RShift |
+     * |--------+------+------+------+------+------|LShift|           |Rshift|------+------+------+------+------+--------|
+     * |    L2  |   Z  |   X  |   C  |   V  |   B  |      |           |      |   K  |   M  |   ,  |   .  |   /  |  ~L2   |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LGui |   `  |      | LCtl | Lalt |                                       | Left | Down |  Up  | Right|  L1  |
      *   `----------------------------------'                                       `----------------------------------'
@@ -25,7 +25,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    EQL, 1,   2,   3,   4,   5,   ESC,
 	    TAB, Q,   W,   F,   P,   G,   LBRC,
 	    NO , A,   R,   S,   T,   D,
-	    LSFT,Z,   X,   C,   V,   B,   FN0,
+	    FN0,Z,   X,   C,   V,   B,   LSFT,
 	    LGUI,GRV, NO,  LCTL,LALT,
 	                                  NO,   NO,
 	                                        HOME,
@@ -33,9 +33,9 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    // Right Hand
 		    BSLS, 6,   7,   8,   9,   0,      MINS,
 		    RBRC, J,   L,   U,   Y,   SCLN,   NO,
-		          H,   N,   E,   I,   O,	  QUOT,
-		    FN2,  K,   M,   COMM,DOT, SLSH,   RSFT,
-		               LEFT,DOWN, UP, RGHT,	  FN1,
+		          H,   N,   E,   I,   O,      QUOT,
+		    RSFT, K,   M,   COMM,DOT, SLSH,   FN2,
+		               LEFT,DOWN, UP, RGHT,   FN1,
 	    NO, FN4,
 	    PGUP,
 	    PGDN, ENT, SPC
@@ -49,8 +49,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |   TAB  |   Q  |   W  |   E  |   R  |   T  |   [  |           |   ]  |   Y  |   U  |   I  |   O  |   P  |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * |        |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------|  L2  |           | ~L2  |------+------+------+------+------+--------|
-     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
+     * |--------+------+------+------+------+------|Lshift|           |Rshift|------+------+------+------+------+--------|
+     * |    L2  |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  |  ~L2   |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LGui |   `  |      | LCtl | Lalt |                                       | Left | Down |  Up  | Right|  L0  |
      *   `----------------------------------'                                       `----------------------------------'
@@ -68,7 +68,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         EQL, 1,   2,   3,   4,   5,   ESC,
         TAB, Q,   W,   E,   R,   T,   LBRC,
         NO,  A,   S,   D,   F,   G,
-        LSFT,Z,   X,   C,   V,   B,   FN0,
+        FN0,Z,   X,   C,   V,   B,   LSFT,
         LGUI,GRV, NO,  LCTL,LALT,
                                       NO,  NO,
                                            HOME,
@@ -77,7 +77,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             BSLS,  6,   7,   8,   9,   0,   MINS,
             RBRC, Y,   U,   I,   O,   P,   NO,
                   H,   J,   K,   L,   SCLN,   QUOT,
-            FN2,  N,   M,   COMM,DOT, SLSH,   RSFT,
+            RSFT, N,   M,   COMM,DOT, SLSH,   FN2,
                        LEFT,DOWN, UP, RGHT,   FN1,
         NO, FN3,
         PGUP,
