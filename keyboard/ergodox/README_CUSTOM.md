@@ -1,3 +1,5 @@
+# I've migrated this into https://github.com/kwonoj/qmk_firmware and no longer use tmk
+
 # Instructions
 
 - `keymap_ergodox_custom.c` includes custom keymapping for ergodox
